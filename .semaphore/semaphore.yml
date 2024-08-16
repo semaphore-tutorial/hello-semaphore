@@ -11,16 +11,10 @@ blocks:
         - name: go build
           commands:
             - checkout
-            - go build -o hello.bin main.go
+            - go build -o hello-go main.go
+            - artifact push project --force hello-go
       env_vars:
         - name: HELLO
           value: world
         - name: foo
           value: bar
-  - name: Test
-    task:
-      jobs:
-        - name: go test
-          commands:
-            - checkout
-            - go test -v
