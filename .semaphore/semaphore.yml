@@ -5,17 +5,13 @@ agent:
     type: f1-standard-2
     os_image: ubuntu2204
 blocks:
-  - name: 'Block #1'
+  - name: Build job
     task:
       jobs:
-        - name: 'Job #1'
+        - name: go build
           commands:
-            - echo "$HELLO"
-            - echo "$foo"
-        - name: 'Job #2'
-          commands:
-            - echo "$HELLO"
-            - echo "$foo"
+            - checkout
+            - go build -o hello.bin main.go
       env_vars:
         - name: HELLO
           value: world
