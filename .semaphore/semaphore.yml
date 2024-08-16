@@ -12,7 +12,7 @@ blocks:
           commands:
             - checkout
             - go build -o hello-go main.go
-            - artifact push project --force hello-go
+            - artifact push workflow --force hello-go
       env_vars:
         - name: HELLO
           value: world
