@@ -34,3 +34,12 @@ blocks:
           commands:
             - checkout
             - go list ./...
+  - name: Release
+    task:
+      secrets:
+        - name: github-release
+      jobs:
+        - name: gh release
+          commands:
+            - checkout
+            - artifact pull workflow hello-go
