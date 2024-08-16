@@ -10,8 +10,14 @@ blocks:
       jobs:
         - name: 'Job #1'
           commands:
-            - checkout
-            - 'echo "Hello, World!"'
+            - echo "$HELLO"
+            - echo "$foo"
         - name: 'Job #2'
           commands:
-            - echo "This is job 2"
+            - echo "$HELLO"
+            - echo "$foo"
+      env_vars:
+        - name: HELLO
+          value: world
+        - name: foo
+          value: bar
