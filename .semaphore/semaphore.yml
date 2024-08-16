@@ -26,3 +26,11 @@ blocks:
             - checkout
             - artifact pull workflow hello-go
             - go test -v
+        - name: go lint
+          commands:
+            - checkout
+            - go vet ./...
+        - name: go fmt
+          commands:
+            - checkout
+            - gofmt -d .
