@@ -18,3 +18,11 @@ blocks:
           value: world
         - name: foo
           value: bar
+  - name: Test
+    task:
+      jobs:
+        - name: go test
+          commands:
+            - checkout
+            - artifact pull workflow hello-go
+            - go test -v
