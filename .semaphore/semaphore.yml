@@ -43,3 +43,4 @@ blocks:
           commands:
             - checkout
             - artifact pull workflow hello-go
+            - 'gh release create "$SEMAPHORE_WORKFLOW_ID" hello-go --latest -t  "$SEMAPHORE_WORKFLOW_ID" -n "Continuous Delivery Release: $SEMAPHORE_WORKFLOW_ID"'
