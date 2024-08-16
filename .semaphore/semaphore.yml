@@ -5,7 +5,7 @@ agent:
     type: f1-standard-2
     os_image: ubuntu2204
 blocks:
-  - name: Build job
+  - name: Build
     task:
       jobs:
         - name: go build
@@ -17,3 +17,10 @@ blocks:
           value: world
         - name: foo
           value: bar
+  - name: Test
+    task:
+      jobs:
+        - name: go test
+          commands:
+            - checkout
+            - go test -v
