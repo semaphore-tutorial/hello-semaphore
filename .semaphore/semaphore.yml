@@ -30,7 +30,7 @@ blocks:
           commands:
             - checkout
             - go vet ./...
-        - name: go fmt
+        - name: go list
           commands:
             - checkout
-            - gofmt -d .
+            - go list ./...
